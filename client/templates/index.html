@@ -1,5 +1,19 @@
 {% include 'main.html' %}
 
 {% block content %}
-<h1>teste</h1>
+
+<div class="row m-4">
+    <div class="col">
+        <h2 class="mb-4">Restaurantes</h2>
+
+        <div>
+            <ul>
+                {% for restaurant in restaurants %}
+                <li><a href="{% url 'menu' restaurant.id %}">{{ restaurant.name }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+
 {% endblock %}
