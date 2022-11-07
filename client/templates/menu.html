@@ -8,8 +8,8 @@
 
             <div>
                 <ul>
-                    {% for food in menu %}
-                    <li>{{ food.name }}</li>
+                    {% for product in menu %}
+                    <li><a href="{% url 'product' restaurant.id product.id %}">{{ product.name }}</a></li>
                     {% endfor %}
                 </ul>
             </div>

@@ -32,7 +32,7 @@ FOOD_OPTIONS = (
     ('Doce', 'Doce'),
 )
 
-class Food(models.Model):
+class Product(models.Model):
     name = models.CharField(max_length=100, null=True)
     description = models.CharField(max_length=1000, null=True)
     category = models.CharField(max_length=50, choices=FOOD_OPTIONS, null=True)
@@ -53,7 +53,7 @@ class Order(models.Model):
         return self.id
 
 class OrderItem(models.Model):
-    product = models.ForeignKey(Food, on_delete=models.SET_NULL, null=True)
+    product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True)
     order = models.ForeignKey(Order, on_delete=models.SET_NULL, null=True)
     quantity = models.IntegerField(default=0, null=True)
     
