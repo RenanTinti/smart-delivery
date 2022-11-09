@@ -2,18 +2,19 @@
 
 {% block content %}
 
-<div class="row m-4">
-    <div class="col">
-        <h2 class="mb-4">Restaurantes</h2>
+<div class="col m-10">
+    <div class="row mb-4">
+        <div class="text-3xl font-bold">Restaurantes</div>
+    </div>
 
-        <div>
-            <ul>
-                {% for restaurant in restaurants %}
-                <li><a href="{% url 'menu' restaurant.id %}">{{ restaurant.name }}</a></li>
-                {% endfor %}
-            </ul>
-        </div>
+    <div class="row mb-4">
+        <ul>
+            {% for restaurant in restaurants %}
+            <li><a href="{% url 'menu' restaurant.id %}">{{ restaurant.name }}</a></li>
+            {% endfor %}
+        </ul>
     </div>
 </div>
+
 
 {% endblock %}
